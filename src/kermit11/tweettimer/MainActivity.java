@@ -40,18 +40,11 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
 {
 
     public static final String COLOR_ACTIONBAR = "#33336C";
+	public static final String COLOR_BG = "#666699";
     
 	private ArrayList<String> namesList = new ArrayList<String>();
     private StringListAdapter adapter = null;
 	private SharedPreferences prefs = null;
-	//A dummy listener for all dialogs
-	private DialogInterface.OnClickListener dummyOCL = new DialogInterface.OnClickListener()
-	{
-		@Override
-		public void onClick(DialogInterface dialog, int which) {}
-	};
-
-	public static final String COLOR_BG = "#666699";
 
 	//Singleton applicationContext to be available for non-activity classes
 	private static Context appContext = null;
@@ -84,7 +77,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
         		AlertDialog.Builder builder = new AlertDialog.Builder(this);
         		builder.setTitle(R.string.welcome_message_title);
         		builder.setMessage(R.string.welcome_message_main_desc);
-        		builder.setPositiveButton(android.R.string.ok, dummyOCL );
+        		builder.setPositiveButton(android.R.string.ok, null );
         		AlertDialog dialog = builder.create();
         		dialog.show();
         	}
@@ -156,11 +149,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);
     		builder.setMessage(R.string.general_error_desc);
-    		builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener()
-    		{
-    			@Override
-    			public void onClick(DialogInterface dialog, int which) {}
-    		});
+    		builder.setPositiveButton(android.R.string.ok, null);
     		AlertDialog dialog = builder.create();
     		dialog.show();
 	
@@ -201,7 +190,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);
     		builder.setMessage(R.string.error_user_missing_desc);
-    		builder.setPositiveButton(android.R.string.ok, dummyOCL);
+    		builder.setPositiveButton(android.R.string.ok, null);
     		AlertDialog dialog = builder.create();
     		dialog.show();
 		}
@@ -210,7 +199,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);
     		builder.setMessage(R.string.error_rate_limit_desc);
-    		builder.setPositiveButton(android.R.string.ok, dummyOCL);
+    		builder.setPositiveButton(android.R.string.ok, null);
     		AlertDialog dialog = builder.create();
     		dialog.show();
 		}
@@ -219,7 +208,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);
     		builder.setMessage(R.string.error_connection_fail_desc);
-    		builder.setPositiveButton(android.R.string.ok, dummyOCL);
+    		builder.setPositiveButton(android.R.string.ok, null);
     		AlertDialog dialog = builder.create();
     		dialog.show();
 		}

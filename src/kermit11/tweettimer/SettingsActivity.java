@@ -322,18 +322,12 @@ public class SettingsActivity extends PreferenceActivity
 			//Check results of username search, confirm with user
 			super.onPostExecute(userDetails);
 
-			//TODO check if this can be replaced with null
-			OnClickListener dummyOCListener = new OnClickListener()
-			{
-				public void onClick(DialogInterface arg0, int arg1){}
-			};
-
 			if (userDetails == null)
 	        {
 	        	//Alert that user cannot be found
 	        	AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
 	        	builder.setMessage("User " + userName + " cannot be found in Twitter");
-	        	builder.setPositiveButton(android.R.string.ok, dummyOCListener);
+	        	builder.setPositiveButton(android.R.string.ok, null);
 	        	AlertDialog dialog = builder.create();
 	        	dialog.show();
 	        }

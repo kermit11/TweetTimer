@@ -89,10 +89,7 @@ public class WelcomeActivity extends ActionBarActivity
 //							AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(WelcomeActivity.this, R.style.DialogTheme));
 							AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 							builder.setMessage(R.string.auth_error_desc);
-				        	builder.setPositiveButton(android.R.string.ok, new OnClickListener()
-							{
-								public void onClick(DialogInterface dialog, int which){}
-							});
+				        	builder.setPositiveButton(android.R.string.ok, null);
 				        	AlertDialog dialog = builder.create();
 				        	dialog.show();
 				        	return true;
