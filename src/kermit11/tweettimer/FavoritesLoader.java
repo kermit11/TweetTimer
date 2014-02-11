@@ -119,9 +119,7 @@ public class FavoritesLoader extends AsyncTaskLoader<List<String>>
 		{
 			onReleaseResources(mData);
 			mData = null;
-			
 		}
-
 	}
 
 	@Override
