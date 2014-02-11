@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="faqTitles">
+        <item name="0">My question 0</item>
+        <item name="1">Another question</item>
+    </string-array>
+    <string-array name="faqAnswers">
+        <item name="0">My answer 0</item>
+        <item name="1">Answer to another question</item>
+    </string-array>
+    
+    <string-array name="userListExample">
+        <item>Kermit</item>
+        <item>Pickel</item>
+        <item>Jimmy</item>
+        <item>_papa</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_height="wrap_content"
+   android:gravity="left|center"
+   android:layout_width="wrap_content"
+   android:paddingBottom="5dp"
+   android:paddingTop="5dp"
+   android:paddingLeft="5dp"
+   android:background="#FFFFCC"> <!-- A3A3FF -->
+        <TextView android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+</LinearLayout>

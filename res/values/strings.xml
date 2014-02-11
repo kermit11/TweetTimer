@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tweet Timer</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_help">Help</string>
+    <string name="action_logout">Logout</string>
+    <string name="active_users_default">Loading active users list</string>
+    <string name="active_users_prefix">Active users in the last</string>
+    <string name="active_users_suffix">minutes</string>
+    <string name="active_users_none">There are no active users from your list</string>
+    <string name="active_users_not_loaded">Tap the refresh button to see who is active</string>
+    
+    <!-- Error messages -->
+    <string name="general_error_title">Uh oh!</string>
+    <string name="general_error_desc">Something wrong happened, but we\'re not sure what. Seems like drinking and coding was a bad idea :/</string>
+    <string name="auth_error_desc">Twitter authorization failed. There\'s nothing we can do without a working Twitter connection :/</string>
+    <string name="error_rate_limit_desc">Twitter are limiting fav-checks to 15 per 15 minutes, so we weren\'t able to check everyone on your list :/</string>
+    <string name="error_user_missing_desc">One or more users in your list have either closed their accounts or changed their user names. You might want to edit your list now :/</string>
+    <string name="error_connection_fail_desc">Looks like we can\'t connect to Twitter. Try checking your network connection.</string>
+    
+    <!-- Welcome activity -->
+    <string name="welcome_message_title">Welcome to TweetTimer!</string>
+    <string name="welcome_message_desc">We\'ll start by connecting to Twitter, and then you could configure a list of your favorite users to monitor.</string>
+    <string name="welcome_message_main_desc">Now let\'s add some users to monitor. Use the Settings button (that\'s the one in the middle) to configure the list. Once you\'re done, go back and refresh the display (that\'s the left button).</string>
+    
+    
+    <!-- Settings activity -->
+    <string name="settings_list">Edit users list</string>
+    <string name="settings_list_desc">Select which users to monitor</string>
+    <string name="settings_list_add">Add a user</string>
+    <string name="settings_list_add_message">Type the name of the user you want to add</string>
+    <string name="settings_list_add_confirm">Add the following user?</string>
+    <string name="settings_list_remove_confirm">Remove the following user?</string>
+    <string name="settings_list_remove_confirm_message">Confirm removing the user: </string>
+    <string name="settings_period">Period (in minutes)</string>
+    <string name="settings_period_desc">This is the length of the time-window to consider when determining if a user is active</string>
+    <string name="settings_threshold">Threshold</string>
+    <string name="settings_threshold_desc">This is the number of favorites made by the user in the defined period, which would flag him as active</string>
+    <string name="settings_list_remove">Tap to remove</string>
+    <string name="settings_check_on_start">Check on startup?</string>
+    <string name="settings_check_on_start_desc">Automatically check who is active when the app starts</string>
+    
+    <!-- Help activity -->
+    <string name="help_intro">TweetTimer for Android is an app that lets you monitor a list of Twitter users to see if they are active. It does that by checking how many tweets each user has favorited in the given period of time. Our goal is to help you decide if now is a good time to post your tweet, or if it would be better to save it for later when people are more "in the mood" for fav\'ing.</string>
+    <string name="help_about">This app was written by Oren Namdar (@kermit_11). Feel free to contact me at kermit11@gmail.com with anything that\'s on your mind.</string>
+    <string name="help_faq">Frequently Asked Questions</string>
+    <string name="faq_title_0">▶  How do I start?</string>
+    <string name="faq_answer_0">The Settings button (that\'s the middle one) will allow you to add new users (by entering their Twitter usernames). Once you\'ve done that, you can go back to the main screen and press the Refresh button (on the left) to see if they had any recent activity.</string>
+    <string name="faq_title_1">▶  What are the more advanced configuration options?</string>
+    <string name="faq_answer_1">The Period setting determines how much time to go back when looking for favorites. For example, if you set it for 10 minutes, only users who have fav\'d during the last 10 minutes will show up as active. The Threshold setting can be configured so that only users which fav\'d more than once lately will be shown as active.</string>
+    <string name="faq_title_2">▶  Looks great. How much?</string>
+    <string name="faq_answer_2">TweetTimer is a free application. If you\'re looking for something to do with your money, I got this mail from a Nigerian prince who could really use it.</string>
+    <string name="faq_title_3">▶  Will TweetTimer post tweets on my behalf?</string>
+    <string name="faq_answer_3">No. I hate that.</string>
+    <string name="faq_title_4">▶  I\'m not able to refresh. It worked just a few seconds ago!</string>
+    <string name="faq_answer_4">Twitter only allows apps to check for favorites 15 times in a period of 15 minutes. This means you\'ll have to wait for this period to end before checking again.</string>
+    <string name="faq_title_5">▶  I can\'t add more users :(</string>
+    <string name="faq_answer_5">Because of Twitter limitations, you\'ll only be able to monitor 15 users at a time.</string>
+</resources>

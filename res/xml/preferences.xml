@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+        android:key="FAV_LIST"
+        android:title="@string/settings_list" 
+        android:summary="@string/settings_list_desc"
+        >
+        <!-- EditTextPreference
+            android:key="FAVLIST_ADD"
+            android:title="@string/settings_list_add" 
+            android:persistent="false"
+            android:dialogMessage="@string/settings_list_add_message"/ -->
+        <Preference
+            android:key="FAVLIST_ADD"
+            android:persistent="false"
+            android:title="@string/settings_list_add" >
+            <!-- intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="kermit11.tweettimer.UserSelectionActivity"
+                android:targetPackage="kermit11.tweettimer" / -->
+        </Preference>
+    </PreferenceScreen>
+    <EditTextPreference
+        android:key="PERIOD"
+        android:title="@string/settings_period"
+        android:summary="@string/settings_period_desc"
+        android:defaultValue="10" />
+    
+    <EditTextPreference
+        android:key="THRESHOLD"
+        android:title="@string/settings_threshold"
+        android:summary="@string/settings_threshold_desc"
+        android:defaultValue="1" />
+    
+    <CheckBoxPreference
+        android:key="CHECK_ON_START"
+        android:title="@string/settings_check_on_start"
+        android:summary="@string/settings_check_on_start_desc"
+        android:defaultValue="true"
+        />
+        
+</PreferenceScreen>

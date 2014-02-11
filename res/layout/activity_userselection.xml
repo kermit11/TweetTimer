@@ -1,0 +1,82 @@
+<!-- Taken from: http://stackoverflow.com/questions/1737009/how-to-make-a-nice-looking-listview-filter-on-android/1737042#1737042 -->
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#666699"
+    android:orientation="vertical" xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/linlaHeaderProgress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/followers_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading your followers..."
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+        
+        <ProgressBar
+            android:id="@+id/pbHeaderProgress"
+            style="@style/ProgressSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ProgressBar>
+    </LinearLayout>
+    
+    <!-- Pretty hint text, and maxLines -->
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\@"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+building_list/search_box"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type to filter"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/userSelectButtonOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            tools:ignore="HardcodedText"  />
+
+    </LinearLayout>
+
+    <!-- Set height to 0, and let the weight param expand it -->
+    <!-- Note the use of the default ID! This lets us use a 
+         ListActivity still! -->
+    <ListView android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" 
+         /> 
+
+</LinearLayout>
