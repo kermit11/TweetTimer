@@ -101,7 +101,8 @@ public class SettingsActivity extends PreferenceActivity
 		{
 			String userName = favList[i];
 			
-            final Preference pref = new Preference(getApplicationContext());
+            UserPreference pref = new UserPreference(getApplicationContext());
+            pref.setPrefNumber(i+1);
             pref.setTitle(userName);
             pref.setSummary(R.string.settings_list_remove);
             pref.setKey(FAV_LIST_PREFIX+i);
@@ -164,9 +165,10 @@ public class SettingsActivity extends PreferenceActivity
         int listSize = prefs.getInt(PREF_FAV_LIST_SIZE, 0);
     	@SuppressWarnings("deprecation")
         PreferenceScreen favListPref = (PreferenceScreen) findPreference(SCREEN_FAVLIST);
-        final Preference pref = new Preference(getApplicationContext());
+        UserPreference pref = new UserPreference(getApplicationContext());
         pref.setTitle(userName);
         pref.setSummary(R.string.settings_list_remove);
+        pref.setPrefNumber(listSize+1);
         pref.setKey(FAV_LIST_PREFIX+(listSize));
         pref.setOnPreferenceClickListener(opClickLstn);
         favListPref.addPreference(pref);
@@ -261,25 +263,44 @@ public class SettingsActivity extends PreferenceActivity
 		 */
 		private void removeUser(Preference preference)
 		{
+			String userName = preference.getKey();
+			removeUserPreference(preference);
+			removeUserFromSharedPrefs(userName);
+			//if add button was disabled, there's room for new users now
+			toggleAddVisibility(true);
+		}
+
+		private void removeUserPreference(Preference preference)
+		{
 			@SuppressWarnings("deprecation")
 			PreferenceScreen favListPref = (PreferenceScreen) findPreference(SCREEN_FAVLIST);
-			favListPref.removePreference(preference);
+			Preference lastPref = favListPref.getPreference(favListPref.getPreferenceCount()-1);
+			//In case it's removed from the middle, put the last one in its place and trim the list
+			if (lastPref != preference)
+			{
+				preference.setTitle(lastPref.getTitle());
+				preference.setSummary(lastPref.getSummary());
+				favListPref.removePreference(lastPref);
+			}
+			else
+			{
+				favListPref.removePreference(preference);
+			}
+		}
 
-			//Remove also from SharedPrefs
+		private void removeUserFromSharedPrefs(String userName)
+		{
 			int listSize = prefs.getInt(PREF_FAV_LIST_SIZE,0);
 			String lastKey = FAV_LIST_PREFIX + (listSize-1);
 			Editor editor = prefs.edit();
 			//In case it's removed from the middle, put the last one in its place and trim the list
-			if (!lastKey.equals(preference.getKey()))
+			if (!lastKey.equals(userName))
 			{
 				String currentLast = prefs.getString(lastKey, "");
-				editor.putString(preference.getKey(), currentLast);
+				editor.putString(userName, currentLast);
 			}
 			editor.putInt(PREF_FAV_LIST_SIZE, --listSize);
 			editor.commit();
-
-			//if add button was disabled, there's room for new users now
-			toggleAddVisibility(true);
 		}
     }
 
