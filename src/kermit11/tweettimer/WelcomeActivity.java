@@ -68,8 +68,8 @@ public class WelcomeActivity extends ActionBarActivity
 			//Get request token 
 			final OAuthService service = new ServiceBuilder()
 			  .provider(TwitterApi.SSL.class)
-			  .apiKey(TwitterBridge.APIKEY)
-			  .apiSecret(TwitterBridge.APISECRET)
+			  .apiKey(TwitterTasks.APIKEY)
+			  .apiSecret(TwitterTasks.APISECRET)
 			  .callback(CALLBACK)
 			  .build();
 

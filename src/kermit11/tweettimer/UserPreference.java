@@ -57,7 +57,7 @@ public class UserPreference extends Preference
 						if (innerChild.getId() == R.id.settingsUserPrefUsername)
 						{
 							TextView title = (TextView) innerChild;
-							title.setText(getTitle());
+							title.setText("@"+getTitle());
 						}
 						if (innerChild.getId() == R.id.settingsUserPrefHint)
 						{

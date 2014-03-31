@@ -9,7 +9,6 @@ import kermit11.tweettimer.util.IntHolder;
 import kermit11.tweettimer.util.StringListAdapter;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -33,8 +32,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //TODO (next version) background service for alerts
+//TODO (next version) automatic mode
 //TODO (next version) multiple lists
-//TODO keep old data in case of failure
+//TODO (consider)keep old data in case of failure
 
 public class MainActivity extends ActionBarActivity implements LoaderCallbacks<List<String>>, ProgressUpdater 
 {
@@ -184,7 +184,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
 		updateHeader();
 
 		//Handle errors
-		if (errCode.val == TwitterBridge.ERROR_CODE_USER_DOES_NOT_EXIST)
+		if (errCode.val == TwitterTasks.ERROR_CODE_USER_DOES_NOT_EXIST)
 		{
 			//TODO (next version) Propose to clean list automatically
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -194,7 +194,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		AlertDialog dialog = builder.create();
     		dialog.show();
 		}
-		else if (errCode.val == TwitterBridge.ERROR_CODE_RATE_LIMIT_REACHED)
+		else if (errCode.val == TwitterTasks.ERROR_CODE_RATE_LIMIT_REACHED)
 		{
     		AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);
@@ -203,7 +203,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		AlertDialog dialog = builder.create();
     		dialog.show();
 		}
-		else if (errCode.val == TwitterBridge.ERROR_CODE_CONNECTION_FAILURE)
+		else if (errCode.val == TwitterTasks.ERROR_CODE_CONNECTION_FAILURE)
 		{
     		AlertDialog.Builder builder = new AlertDialog.Builder(this);
     		builder.setTitle(R.string.general_error_title);

@@ -26,10 +26,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-//TODO *consider* Secondary text below is for status, not description
-
-//TODO consider moving nested preference screen to separate activity (see: http://stackoverflow.com/questions/2615528/preferenceactivity-and-theme-not-applying )
-//TODO enumerate users
+//TODO (consider) moving nested preference screen to separate activity (see: http://stackoverflow.com/questions/2615528/preferenceactivity-and-theme-not-applying )
 
 public class SettingsActivity extends PreferenceActivity
 {
@@ -66,10 +63,6 @@ public class SettingsActivity extends PreferenceActivity
     	View view = this.getWindow().getDecorView();
     	view.setBackgroundColor(Color.parseColor(MainActivity.COLOR_BG));
     	setTheme(R.style.PreferenceActivityTheme);
-    	
-    	//TODO action bar support for preference activity
-//    	ActionBar actionBar = getSupportActionBar();
-//    	actionBar.setDisplayHomeAsUpEnabled(true);
     	
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
     	addPreferencesFromResource(R.xml.preferences);
@@ -244,7 +237,7 @@ public class SettingsActivity extends PreferenceActivity
 			//Confirm removal
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
 	    	builder.setTitle(R.string.settings_list_remove_confirm);
-	    	builder.setMessage(preference.getTitle());
+	    	builder.setMessage("@"+preference.getTitle());
 	    	builder.setPositiveButton(android.R.string.ok, new OnClickListener()
 			{
 				@Override
@@ -358,10 +351,10 @@ public class SettingsActivity extends PreferenceActivity
 	        	AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
 	        	builder.setTitle(R.string.settings_list_add_confirm);
 	        	LinearLayout layout = (LinearLayout) getLayoutInflater().inflate(R.layout.user_confirm_dialog,null);
-	        	Drawable avatar = (Drawable) userDetails.get(TwitterBridge.AVATAR);
+	        	Drawable avatar = (Drawable) userDetails.get(TwitterTasks.AVATAR);
 	        	((ImageView) layout.findViewById(R.id.avatar)).setImageDrawable(avatar);
-	        	((TextView) layout.findViewById(R.id.screenname)).setText("@"+userDetails.get(TwitterBridge.SCREEN_NAME));
-	        	((TextView) layout.findViewById(R.id.username)).setText((String)userDetails.get(TwitterBridge.USER_NAME));
+	        	((TextView) layout.findViewById(R.id.screenname)).setText("@"+userDetails.get(TwitterTasks.SCREEN_NAME));
+	        	((TextView) layout.findViewById(R.id.username)).setText((String)userDetails.get(TwitterTasks.USER_NAME));
 	        	builder.setView(layout);
 	        	//When confirmed, method in caller will be invoked to actually add the user
 	        	builder.setPositiveButton(android.R.string.ok, new OnClickListener()
@@ -369,7 +362,7 @@ public class SettingsActivity extends PreferenceActivity
 					@Override
 					public void onClick(DialogInterface dialog, int which)
 					{
-						caller.addUser((String)userDetails.get(TwitterBridge.SCREEN_NAME));
+						caller.addUser((String)userDetails.get(TwitterTasks.SCREEN_NAME));
 						caller.toggleAddVisibility(true);
 					}
 				});

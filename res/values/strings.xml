@@ -40,6 +40,9 @@
     <string name="settings_list_remove">Tap to remove</string>
     <string name="settings_check_on_start">Check on startup?</string>
     <string name="settings_check_on_start_desc">Automatically check who is active when the app starts</string>
+
+    <!-- User selection activity -->
+    <string name="userselection_notfound">We were unable to connect to Twitter and find your followers. Retry?</string>
     
     <!-- Help activity -->
     <string name="help_intro">TweetTimer for Android is an app that lets you monitor a list of Twitter users to see if they are active. It does that by checking how many tweets each user has favorited in the given period of time. Our goal is to help you decide if now is a good time to post your tweet, or if it would be better to save it for later when people are more "in the mood" for fav\'ing.</string>
