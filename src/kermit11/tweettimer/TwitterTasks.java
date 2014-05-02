@@ -72,7 +72,6 @@ public class TwitterTasks
 	/**
 	 * 	Fetch followers of logged on user
 	 */
-	//TODO error handling
 	public String[] getFollowers()
 	{
 		String[] allFollowers = null;

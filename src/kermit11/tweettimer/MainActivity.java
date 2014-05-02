@@ -35,6 +35,7 @@ import android.widget.Toast;
 //TODO (next version) automatic mode
 //TODO (next version) multiple lists
 //TODO (consider)keep old data in case of failure
+//TODO (consider) add avatars
 
 public class MainActivity extends ActionBarActivity implements LoaderCallbacks<List<String>>, ProgressUpdater 
 {

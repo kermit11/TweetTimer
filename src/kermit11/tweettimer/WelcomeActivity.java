@@ -85,8 +85,6 @@ public class WelcomeActivity extends ActionBarActivity
 						//In case user/Twitter denied authorization, there's nothing much we can do
 						if (url.indexOf("denied") > 0)
 						{
-							//TODO fix/rewrite dialogTheme 
-//							AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(WelcomeActivity.this, R.style.DialogTheme));
 							AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
 							builder.setMessage(R.string.auth_error_desc);
 				        	builder.setPositiveButton(android.R.string.ok, null);
@@ -115,8 +113,6 @@ public class WelcomeActivity extends ActionBarActivity
 
 
 			//The welcome message
-			//TODO fix/rewrite dialogTheme
-			//AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DialogTheme));
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
         	builder.setTitle(R.string.welcome_message_title);
         	builder.setMessage(R.string.welcome_message_desc);
