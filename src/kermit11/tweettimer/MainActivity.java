@@ -137,6 +137,7 @@ public class MainActivity extends ActionBarActivity implements LoaderCallbacks<L
     		boolean checkOnStart = prefs.getBoolean(SettingsActivity.PREF_CHECK_ON_START, SettingsActivity.DEFAULT_CHECK_ON_START);
     		if (checkOnStart)
     		{
+    			refreshButton.setEnabled(false);
         		getSupportLoaderManager().initLoader(0, null, this);
     		}
     		else
