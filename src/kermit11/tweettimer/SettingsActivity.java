@@ -35,7 +35,7 @@ public class SettingsActivity extends PreferenceActivity
 	public static final String PREF_THRESHOLD = "THRESHOLD";
 	public static final String DEFAULT_THRESHOLD = "1";
 	public static final String PREF_PERIOD = "PERIOD";
-	public static final String DEFAULT_PERIOD = "15";
+	public static final String DEFAULT_PERIOD = "20";
 	public static final String PREF_ALARM_STATE = "ALARM_STATE";
 	public static final boolean DEFAULT_ALARM_STATE = false;
 	public static final String PREF_ALARM_TRIGGER = "ALARM_TRIGGER";
