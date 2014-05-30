@@ -18,6 +18,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -60,6 +61,7 @@ public class UserSelectionActivity extends ListActivity
 		        finish();
 			}
 		});
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 	}
 
 	
@@ -109,16 +111,16 @@ public class UserSelectionActivity extends ListActivity
 	 */
 	private TextWatcher filterTextWatcher = new TextWatcher() {
 
-	    public void afterTextChanged(Editable s) {
-	    }
+	    public void afterTextChanged(Editable s) { }
 
-	    public void beforeTextChanged(CharSequence s, int start, int count,
-	            int after) {
-	    }
+	    public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
-	    public void onTextChanged(CharSequence s, int start, int before,
-	            int count) {
-	        adapter.getFilter().filter(s);
+	    public void onTextChanged(CharSequence s, int start, int before, int count) 
+	    {
+	    	if (adapter != null)
+	    	{
+	    		adapter.getFilter().filter(s);
+	    	}
 	    }
 
 	};
